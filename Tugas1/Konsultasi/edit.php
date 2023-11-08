@@ -12,14 +12,14 @@
     <?php
     include '../koneksi.php';
 
-    $dokter = mysqli_query($conn, "SELECT * from konsultasi where id ='$_GET[id_konsultasi]'");
+    $konsultasi = mysqli_query($conn, "SELECT * from konsultasi as k join dokter as d on k.id_dokter = d.id_dokter join pasien as p on k.id_pasien = p.id_pasien join diagnosa as dg  on dg.id_diagnosa=k.id_diagnosa where id_konsultasi ='$_GET[id]'");
 
     while ($k = mysqli_fetch_array($konsultasi)) {
-        $id = $k["id"];
+        $id = $k["id_konsultasi"];
         $nama_dokter = $k["nama_dokter"];
         $spesialis = $k["spesialis"];
-        $alamat = $k["alamat"];
-        $no_telp = $k["no_telp"];
+        $pasien = $k["nama_pasien"];
+        $diagnosa = $k["nama_penyakit"];
     }
     ?>
     <form action="proses_edit.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
@@ -48,6 +48,11 @@
                 <td>Diagnosa</td>
                 <td>:</td>
                 <td><input type="text" name="diagnosa" value="<?php echo $diagnosa ?>"></td>
+            </tr>
+            <tr>
+                <td>Tanggal Berobat</td>
+                <td>:</td>
+                <td><input type="date" name="tgl_berobat" value="<?php echo $tgl_berobat ?>"></td>
             </tr>
         </table>
         <input type="submit" name="Submit" value="Simpan">

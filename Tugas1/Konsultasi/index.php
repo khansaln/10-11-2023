@@ -17,7 +17,7 @@
                 $query = mysqli_query($conn, "SELECT * from konsultasi as k join dokter as d on k.id_dokter = d.id_dokter join pasien as p on k.id_pasien = p.id_pasien join diagnosa as dg  on dg.id_diagnosa=k.id_diagnosa;");
                 ?>
                 <center>
-                    <h1>DATA DOKTER & PASIEN</h1>
+                    <h1>DATA KONSULTASI</h1>
                 </center>
                 <a class="btn btn-info" style="margin-bottom:5px" href="tambah.php?nama_halaman=Tambah Dokter"> Tambah Data </a>
                 <table class="table table-striped table-bordered">
@@ -56,7 +56,7 @@
                         while ($data = mysqli_fetch_array($query)) {
                     ?>
                             <tr>
-                                <td> <?php echo $data["id_dokter"] ?></td>
+                                <td> <?php echo $data["id_konsultasi"] ?></td>
                                 <td> <?php echo $data["nama_dokter"] ?> </td>
                                 <td> <?php echo $data["spesialis"] ?> </td>
                                 <td> <?php echo $data["nama_pasien"] ?> </td>

@@ -76,6 +76,11 @@
                     </select>
                 </td>
             </tr>
+            <tr>
+                <td>Tanggal Berobat</td>
+                <td>:</td>
+                <td><input type="date" name="tgl_berobat"></td>
+            </tr>
 
         </table>
         <input type="submit" name="Submit" value="Simpan">
