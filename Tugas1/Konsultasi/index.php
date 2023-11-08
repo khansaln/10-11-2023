@@ -14,7 +14,7 @@
             <div class="col-sm-12">
                 <?php
                 include '../koneksi.php';
-                $query = mysqli_query($conn, "SELECT * from konsultasi as k join dokter as d on k.id_dokter = d.id_dokter join pasien as p on k.id_pasien = p.id_pasien join diagnosa as dg  on dg.id_diagnosa=k.id_diagnosa;");
+                $query = mysqli_query($conn, "SELECT * from konsultasi as k join dokter as d on k.id_dokter = d.id_dokter join pasien as p on k.id_pasien = p.id_pasien join diagnosa as dg  on k.id_diagnosa=dg.id_diagnosa ORDER BY id_konsultasi;");
                 ?>
                 <center>
                     <h1>DATA KONSULTASI</h1>
