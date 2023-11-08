@@ -12,14 +12,14 @@
     <?php
     include '../koneksi.php';
 
-    $dokter = mysqli_query($conn, "SELECT * from dokter where id='$_GET[id]'");
+    $dokter = mysqli_query($conn, "SELECT * from konsultasi where id ='$_GET[id_konsultasi]'");
 
-    while ($d = mysqli_fetch_array($dokter)) {
-        $id = $d["id"];
-        $nama_dokter = $d["nama_dokter"];
-        $spesialis = $d["spesialis"];
-        $alamat = $d["alamat"];
-        $no_telp = $d["no_telp"];
+    while ($k = mysqli_fetch_array($konsultasi)) {
+        $id = $k["id"];
+        $nama_dokter = $k["nama_dokter"];
+        $spesialis = $k["spesialis"];
+        $alamat = $k["alamat"];
+        $no_telp = $k["no_telp"];
     }
     ?>
     <form action="proses_edit.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
@@ -30,7 +30,7 @@
                 <td><input type="text" name="id" value="<?php echo $id ?>"></td>
             </tr>
             <tr>
-                <td>Nama</td>
+                <td>Nama Dokter</td>
                 <td>:</td>
                 <td><input type="text" name="nama_dokter" value="<?php echo $nama_dokter ?>"></td>
             </tr>
@@ -40,14 +40,14 @@
                 <td><input type="text" name="spesialis" value="<?php echo $spesialis ?>"></td>
             </tr>
             <tr>
-                <td>Alamat</td>
+                <td>Nama Pasien</td>
                 <td>:</td>
-                <td><input type="text" name="alamat" value="<?php echo $alamat ?>"></td>
+                <td><input type="text" name="pasien" value="<?php echo $pasien ?>"></td>
             </tr>
             <tr>
-                <td>No.Telepon</td>
+                <td>Diagnosa</td>
                 <td>:</td>
-                <td><input type="text" name="no_telp" value="<?php echo $no_telp ?>"></td>
+                <td><input type="text" name="diagnosa" value="<?php echo $diagnosa ?>"></td>
             </tr>
         </table>
         <input type="submit" name="Submit" value="Simpan">

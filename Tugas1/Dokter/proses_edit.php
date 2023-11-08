@@ -9,8 +9,6 @@ $alamat = $_POST["alamat"];
 $no_telp = $_POST["no_telp"];
 
 
-
-
-$result = mysqli_query($conn, "UPDATE `dokter` set `nama_dokter` = '$nama_dokter', `spesialis` = '$spesialis', `alamat` = '$alamat', `no_telp` = '$no_telp' where `id` = '$_GET[id]'");
+$result = mysqli_query($conn, "UPDATE `dokter` set `nama_dokter` = '$nama_dokter', `spesialis` = '$spesialis', `alamat` = '$alamat', `no_telp` = '$no_telp' where `id_dokter` = '$_GET[id]'");
 
 header("Location:index.php");
