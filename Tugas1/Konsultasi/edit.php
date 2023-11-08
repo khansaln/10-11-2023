@@ -42,7 +42,7 @@
             <tr>
                 <td>Nama Pasien</td>
                 <td>:</td>
-                <td><input type="text" name="pasien" value="<?php echo $pasien ?>"></td>
+                <td><input type="text" name="nama_pasien" value="<?php echo $nama_pasien ?>"></td>
             </tr>
             <tr>
                 <td>Diagnosa</td>
